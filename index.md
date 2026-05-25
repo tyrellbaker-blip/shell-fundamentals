@@ -26,7 +26,7 @@ Use this before doing anything. Before creating a file, deleting something, or r
 
 ```bash
 $ pwd
-/Users/tyrell/projects/my-app
+/Users/username/projects/my-app
 ```
 
 ### Moving Around

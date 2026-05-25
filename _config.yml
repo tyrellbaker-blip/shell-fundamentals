@@ -1,2 +1,5 @@
-title: Shell Fundamentals
+title: Shell & Terminal Command Reference
+description: Code in Place — Terminal Teaching Session
 theme: minima
+minima:
+  skin: dark

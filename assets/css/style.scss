@@ -1,14 +1,7 @@
 ---
 ---
 
-@import "minima/skins/dark", "minima/initialize";
-
-/* Page title */
-.page-title {
-  color: #79c0ff;
-  border-bottom: 2px solid #79c0ff;
-  padding-bottom: 0.5rem;
-}
+@import "jekyll-theme-midnight";
 
 /* Make inline code pop */
 code {
@@ -88,15 +81,6 @@ strong {
   color: #ffa657;
 }
 
-/* Blockquotes for notes */
-blockquote {
-  border-left: 4px solid #ffa657;
-  background-color: #161b22;
-  padding: 0.8em 1.2em;
-  margin: 1.5em 0;
-  border-radius: 0 6px 6px 0;
-}
-
 /* Horizontal rules */
 hr {
   border: none;
@@ -104,7 +88,7 @@ hr {
   margin: 3em 0;
 }
 
-/* Ordered and unordered lists */
+/* Lists */
 li {
   margin-bottom: 0.4em;
 }

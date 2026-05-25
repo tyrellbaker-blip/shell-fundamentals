@@ -1,124 +1,66 @@
 ---
+layout: default
+title: Terminal & PowerShell Command Reference
 ---
 
-@import "minima/skins/dark", "minima/initialize";
+# Terminal & PowerShell Command Reference
+{: .page-title}
 
-/* Page title */
-.page-title {
-  color: #79c0ff;
-  border-bottom: 2px solid #79c0ff;
-  padding-bottom: 0.5rem;
-}
+A reference for terminal commands covering Mac Terminal (Bash/Zsh) and Windows PowerShell. Bookmark this and come back to it when you need a reminder.
 
-/* Make inline code pop */
-code {
-  background-color: #1c2128;
-  color: #7ee787;
-  padding: 0.2em 0.45em;
-  border-radius: 4px;
-  font-size: 0.88em;
-  font-weight: 500;
-  border: 1px solid #30363d;
-}
+---
 
-/* Code blocks */
-pre {
-  background-color: #0d1117 !important;
-  border: 1px solid #30363d;
-  border-radius: 8px;
-  padding: 1.2em;
-  overflow-x: auto;
-}
+## Navigation Commands
 
-pre code {
-  background-color: transparent;
-  border: none;
-  padding: 0;
-  color: #c9d1d9;
-  font-size: 0.9em;
-}
+These are the commands you'll use the most.
 
-/* Tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5em 0;
-}
+### Where Am I?
 
-th {
-  background-color: #161b22;
-  color: #79c0ff;
-  text-align: left;
-  padding: 0.75em 1em;
-  border-bottom: 2px solid #30363d;
-  font-weight: 600;
-}
+| Command | Platform | What It Does |
+| --- | --- | --- |
+| `pwd` | Mac | Print Working Directory — shows the full path to your current location |
+| `pwd` | Windows | Same (PowerShell aliases it to `Get-Location`) |
+| `Get-Location` | Windows | The full PowerShell cmdlet for pwd |
 
-td {
-  padding: 0.65em 1em;
-  border-bottom: 1px solid #21262d;
-}
+Use this before doing anything. Before creating a file, deleting something, or running a script — confirm where you are first.
 
-tr:hover {
-  background-color: #161b22;
-}
+```bash
+$ pwd
+/Users/tyrell/projects/my-app
+```
 
-/* Table inline code — brighter */
-td code {
-  color: #7ee787;
-  background-color: #0d1117;
-  font-weight: 600;
-}
+### Moving Around
 
-/* Section headers */
-h2 {
-  color: #d2a8ff;
-  margin-top: 2.5em;
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid #21262d;
-}
+| Command | Platform | What It Does |
+| --- | --- | --- |
+| `cd foldername` | Both | Change Directory — move into a folder |
+| `cd ..` | Both | Go up one level |
+| `cd ../..` | Both | Go up two levels |
+| `cd ~` | Both | Jump to your home directory |
+| `cd /` | Both | Jump to the filesystem root |
+| `cd -` | Mac | Go back to the previous directory |
+| `Set-Location foldername` | Windows | Full PowerShell cmdlet for cd |
 
-h3 {
-  color: #79c0ff;
-  margin-top: 1.8em;
-}
+Use Tab to auto-complete folder names. Start typing a few letters and hit Tab. If there are multiple matches, hit Tab twice to see all options.
 
-/* Strong/bold text — used for warnings */
-strong {
-  color: #ffa657;
-}
+```bash
+$ cd ~/projects/my-app
+$ cd ..          # now in ~/projects
+$ cd -           # back in ~/projects/my-app
+```
 
-/* Blockquotes for notes */
-blockquote {
-  border-left: 4px solid #ffa657;
-  background-color: #161b22;
-  padding: 0.8em 1.2em;
-  margin: 1.5em 0;
-  border-radius: 0 6px 6px 0;
-}
+### Listing Contents
 
-/* Horizontal rules */
-hr {
-  border: none;
-  border-top: 1px solid #30363d;
-  margin: 3em 0;
-}
-
-/* Ordered and unordered lists */
-li {
-  margin-bottom: 0.4em;
-}
-
-/* Body adjustments */
-body {
-  font-size: 16px;
-  line-height: 1.7;
-}
-
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
+| Command | Platform | What It Does |
+| --- | --- | --- |
+| `ls` | Mac | List files and folders in the current directory |
+| `ls -l` | Mac | Long format — permissions, size, dates |
+| `ls -a` | Mac | Show all files, including hidden (starting with .) |
+| `ls -la` | Mac | Long format + hidden files — the one you'll use most |
+| `ls -lh` | Mac | Long format with human-readable sizes (KB, MB, GB) |
+| `ls *.py` | Mac | List only files matching a pattern |
+| `dir` | Windows | Directory listing |
+| `Get-ChildItem` | Windows | Full PowerShell cmdlet |
 | `dir -Force` | Windows | Show hidden files |
 | `Get-ChildItem -Recurse` | Windows | List files in all subdirectories |
 
